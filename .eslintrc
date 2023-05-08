@@ -37,7 +37,7 @@
     "arrow-parens": "warn",
     "comma-dangle": "off",
     "prefer-const": "warn",
-    "no-unused-vars": "warn",
+    //"no-unused-vars": "warn",
     "spaced-comment": "warn",
     "@typescript-eslint/ban-ts-comment": "off",
     "camelcase": "off",
