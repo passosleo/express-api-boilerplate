@@ -4,15 +4,16 @@ This is a simple API boilerplate project built with Node.js and Express. It prov
 
 ### Features
 
-Express.js server for handling HTTP requests
-CORS middleware for handling Cross-Origin Resource Sharing
-Axios for making HTTP requests to external APIs
-Class-transformer for transforming and validating data objects
-Class-validator for validating data based on defined rules
-HTTP status codes library for easy status code reference
-Moment.js for handling dates and times
-Nodemailer for sending emails
-UUID for generating unique identifiers
+* Express.js server for handling HTTP requests
+* CORS middleware for handling Cross-Origin Resource Sharing
+* Axios for making HTTP requests to external APIs
+* Class-transformer for transforming and validating data objects
+* Class-validator for validating data based on defined rules
+* HTTP status codes library for easy status code reference
+* Moment.js for handling dates and times
+* Nodemailer for sending emails
+* UUID for generating unique identifiers
+* Log4JS for generating logs
 
 ### Contributing
 

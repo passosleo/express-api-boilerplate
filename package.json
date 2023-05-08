@@ -10,7 +10,8 @@
     "dev": "cross-env NODE_ENV=development npx nodemon",
     "prebuild": "rimraf ./dist",
     "build": "npm run prebuild && tsc",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\""
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "logs:clear": "rimraf ./logs"
   },
   "dependencies": {
     "axios": "^1.4.0",
