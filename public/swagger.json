@@ -1,0 +1,141 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"StatusCodes": {
+				"enum": [
+					202,
+					502,
+					400,
+					409,
+					100,
+					201,
+					417,
+					424,
+					403,
+					504,
+					410,
+					505,
+					418,
+					419,
+					507,
+					500,
+					411,
+					423,
+					420,
+					405,
+					301,
+					302,
+					207,
+					300,
+					511,
+					204,
+					203,
+					406,
+					404,
+					501,
+					304,
+					200,
+					206,
+					402,
+					308,
+					412,
+					428,
+					102,
+					407,
+					431,
+					408,
+					413,
+					414,
+					416,
+					205,
+					303,
+					503,
+					101,
+					307,
+					429,
+					401,
+					451,
+					422,
+					415,
+					305,
+					421
+				],
+				"type": "number"
+			},
+			"PingResponse": {
+				"properties": {
+					"message": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"DefaultResponse_PingResponse_": {
+				"properties": {
+					"status": {
+						"$ref": "#/components/schemas/StatusCodes"
+					},
+					"message": {
+						"type": "string"
+					},
+					"data": {
+						"$ref": "#/components/schemas/PingResponse"
+					}
+				},
+				"required": [
+					"status",
+					"message"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "express-api-boilerplate",
+		"version": "1.0.0",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {
+			"name": "Leonardo Passos"
+		}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/api/ping": {
+			"get": {
+				"operationId": "Ping",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/DefaultResponse_PingResponse_"
+								}
+							}
+						}
+					}
+				},
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
