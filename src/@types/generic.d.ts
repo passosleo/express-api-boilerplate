@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes';
 
-export interface DefaultResponse<T> {
+export type DefaultResponse = {
   status: StatusCodes;
   message: string;
-  data?: T;
-}
+  data?: any;
+};

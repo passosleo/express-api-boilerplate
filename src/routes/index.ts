@@ -1,6 +1,6 @@
-import { Application } from 'express';
-import pingRoutes from './ping';
+import { Express } from 'express';
+import { healthRoutes } from './health-routes';
 
-export const routes = (app: Application) => {
-  app.use('/api', pingRoutes);
-};
+export function useRoutes(app: Express) {
+  app.use('/health', healthRoutes);
+}
