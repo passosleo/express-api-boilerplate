@@ -1,4 +1,4 @@
-import { useLogger } from '../plugins/log4js-logger-plugin';
+import { useLogger } from '../plugins/logger-plugin';
 
 export function useHealthService() {
   const { logger } = useLogger({ context: 'health-service' });

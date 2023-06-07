@@ -23,12 +23,12 @@ log4js.configure({
   },
 });
 
-interface Props {
+type LoggerProps = {
   level?: string;
   context?: string;
-}
+};
 
-export function useLogger({ level = 'debug', context = 'default' }: Props = {}) {
+export function useLogger({ level = 'debug', context = 'default' }: LoggerProps = {}) {
   const logger = log4js.getLogger(context);
   logger.level = level;
   return {

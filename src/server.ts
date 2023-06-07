@@ -4,7 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerDoc from '../swagger.json';
 import cors from 'cors';
 import { configureRoutes } from './routes';
-import { useLogger } from './plugins/log4js-logger-plugin';
+import { useLogger } from './plugins/logger-plugin';
 import { errorMiddleware } from './middlewares/error-middleware';
 
 type ServerProps = {

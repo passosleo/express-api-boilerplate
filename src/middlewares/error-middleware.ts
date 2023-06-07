@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { useLogger } from '../plugins/log4js-logger-plugin';
+import { useLogger } from '../plugins/logger-plugin';
 
 export async function errorMiddleware(
   error: Error,
