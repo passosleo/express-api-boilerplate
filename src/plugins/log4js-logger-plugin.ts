@@ -28,7 +28,7 @@ interface Props {
   context?: string;
 }
 
-export function useLogger({ level = 'debug', context = 'default' }: Props) {
+export function useLogger({ level = 'debug', context = 'default' }: Props = {}) {
   const logger = log4js.getLogger(context);
   logger.level = level;
   return {

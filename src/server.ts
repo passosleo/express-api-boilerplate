@@ -3,13 +3,17 @@ import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDoc from '../swagger.json';
 import cors from 'cors';
-import { useRoutes } from './routes';
+import { configureRoutes } from './routes';
 import { useLogger } from './plugins/log4js-logger-plugin';
-import { useErrorMiddleware } from './middlewares/error-middleware';
+import { errorMiddleware } from './middlewares/error-middleware';
 
 type ServerProps = {
   port?: number;
   name?: string;
+};
+
+type StartOptions = {
+  autoSetup?: boolean;
 };
 
 export function useServer({ port, name }: ServerProps) {
@@ -31,19 +35,21 @@ export function useServer({ port, name }: ServerProps) {
       }),
     );
     app.use(express.static('public'));
-    useRoutes(app);
-    app.use(useErrorMiddleware);
+    configureRoutes(app);
+    app.use(errorMiddleware);
   }
 
-  function start() {
-    setup();
+  function start({ autoSetup = true }: StartOptions = {}) {
+    if (autoSetup) setup();
     app.listen(port ?? process.env.PORT ?? 3000, () => {
       logger.info(`Server ${name ?? ''} is running on port ${port}`);
-      logger.info(`Swagger available at /docs`);
+      if (autoSetup) logger.info(`Swagger available at /docs`);
     });
   }
 
   return {
+    app,
+    setup,
     start,
   };
 }
